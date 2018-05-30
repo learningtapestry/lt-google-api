@@ -4,7 +4,7 @@ module Lt
   module Google
     module Api
       class Drive
-        FOLDER_RE = %r{/drive/(.*/)?folders/([^\/]+)/?}
+        FOLDER_RE = %r{/drive/(.*/)?folders/([^\/?]+)/?}
         MIME_FILE   = 'application/vnd.google-apps.document'
         MIME_FOLDER = 'application/vnd.google-apps.folder'
 
@@ -42,7 +42,7 @@ module Lt
           service.create_file(metadata).id
         end
 
-        def list_file_ids_in(folder_id)
+        def list_file_ids_in(folder_id, with_subfolders: true)
           [].tap do |result|
             page_token = nil
             loop do
@@ -55,7 +55,8 @@ module Lt
               response.files.each do |f|
                 case f.mime_type
                 when MIME_FILE then result << f.id
-                when MIME_FOLDER then result.concat list_file_ids_in(f.id)
+                when MIME_FOLDER
+                  result.concat(list_file_ids_in f.id) if with_subfolders
                 end
               end
 
