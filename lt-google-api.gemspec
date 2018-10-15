@@ -4,7 +4,7 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lt/google/api/version'
 
-Gem::Specification.new do |spec|
+Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.name          = 'lt-google-api'
   spec.version       = Lt::Google::Api::VERSION
   spec.authors       = ['Alexander Kuznetsov']
@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'googleauth'
   spec.add_dependency 'google-api-client'
+  spec.add_dependency 'googleauth'
 
   spec.add_development_dependency 'brakeman'
   spec.add_development_dependency 'bundler', '~> 1.16'
