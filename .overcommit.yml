@@ -1,0 +1,42 @@
+verify_signatures: false
+
+PreCommit:
+  RuboCop:
+    command: ['rubocop', '--force-exclusion']
+    enabled: true
+    on_warn: fail
+    exclude:
+    - db/migrate/*
+    - spec/dummy/**/*
+
+  BundleCheck:
+    enabled: true
+
+  BundleOutdated:
+    enabled: true
+
+  LocalPathsInGemfile:
+    enabled: true
+
+  ExecutePermissions:
+    enabled: true
+    exclude:
+    - bin/*
+    - spec/dummy/bin/*
+
+  YamlSyntax:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+PostCheckout:
+  ALL:
+    quiet: true # Change all post-checkout hooks to only display output on failure
+
+  IndexTags:
+    enabled: true # Generate a tags file with `ctags` each time HEAD changes
+
+PrePush:
+  RSpec:
+    enabled: false

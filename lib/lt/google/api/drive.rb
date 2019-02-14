@@ -29,6 +29,39 @@ module Lt
           @service.authorization = credentials
         end
 
+        def copy(file_ids, folder_id)
+          file_ids.each do |id|
+            service.get_file(id, fields: 'name') do |f, err|
+              if err.present?
+                Rails.logger.error "Failed to get file with #{id}, #{err.message}"
+              else
+                service.copy_file(id, Google::Apis::DriveV3::File.new(name: f.name, parents: [folder_id]))
+              end
+            end
+          end
+          folder_id
+        end
+
+        def copy_files(folder_id, target_id)
+          new_files = list folder_id
+          current_files = list target_id
+
+          # delete old files not present on new version
+          current_files.each do |file|
+            next if new_files.detect { |f| f.name == file.name }
+            service.delete_file(file.id)
+          end
+
+          new_files.each do |file|
+            # skip if the file already exists
+            next if current_files.detect { |f| f.name == file.name }
+
+            # copy if it's a new file
+            new_file = Google::Apis::DriveV3::File.new(name: file.name, parents: [target_id])
+            service.copy_file(file.id, new_file)
+          end
+        end
+
         def create_folder(name, parent_id = nil)
           if parent_id.present? && (folders = fetch_folders(name, parent_id)).any?
             return folders.first.id
@@ -42,7 +75,7 @@ module Lt
           service.create_file(metadata).id
         end
 
-        def list_file_ids_in(folder_id, with_subfolders: true)
+        def list_file_ids_in(folder_id, mime_type: MIME_FILE, with_subfolders: true)
           [].tap do |result|
             page_token = nil
             loop do
@@ -54,9 +87,9 @@ module Lt
 
               response.files.each do |f|
                 case f.mime_type
-                when MIME_FILE then result << f.id
+                when mime_type then result << f.id
                 when MIME_FOLDER
-                  result.concat(list_file_ids_in f.id) if with_subfolders
+                  result.concat(list_file_ids_in f.id, mime_type: mime_type) if with_subfolders
                 end
               end
 
@@ -70,6 +103,15 @@ module Lt
           service.list_files(
             q: "'#{folder_id}' in parents and name = '#{name}' and mimeType = '#{MIME_FOLDER}' and trashed = false",
             fields: 'files(id)'
+          ).files
+        end
+
+        private
+
+        def list(folder_id)
+          service.list_files(
+            q: "'#{folder_id}' in parents and mimeType = '#{MIME_FILE}' and trashed = false",
+            fields: 'files(id, name)'
           ).files
         end
       end

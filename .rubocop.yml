@@ -1,15 +1,18 @@
 AllCops:
   Include:
-    - Gemfile
-    - Guardfile
-    - Rakefile
-    - config.ru
-    - lib/**/*.rake
+    - '**/*.rb'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+    - '**/*.rake'
+    - '**/*.ru'
+    - '**/Gemfile'
+    - '**/Guardfile'
+    - '**/Rakefile'
   Exclude:
     - bin/*
     - db/schema.rb
-    - test/dummy/db/schema.rb
-  TargetRubyVersion: 2.3
+    - node_modules/**/*
+  TargetRubyVersion: 2.5
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented_relative_to_receiver
@@ -24,7 +27,6 @@ Metrics/BlockLength:
   Exclude:
   - '**/*_spec.rb'
   - 'config/routes.rb'
-  - '*.gemspec'
   ExcludedMethods: ['guard', 'included']
 
 Metrics/ClassLength:
@@ -42,8 +44,8 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 9
 
-Naming/FileName:
-  Exclude: ['*.gemspec']
+Naming/UncommunicativeMethodParamName:
+  MinNameLength: 2
 
 Style/AndOr:
   Enabled: false

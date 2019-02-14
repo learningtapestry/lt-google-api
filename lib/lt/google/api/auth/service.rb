@@ -30,7 +30,7 @@ module Lt
 
           attr_reader :context
 
-          def initialize(context, options)
+          def initialize(context, options = {})
             @context = context
             @options = options
           end
