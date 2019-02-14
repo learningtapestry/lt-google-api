@@ -13,7 +13,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.homepage    = '' # TODO: Place URL to GitHub page here
   spec.summary     = '' # TODO: Summary of OdellLessonCompiler.
   spec.description = '' # TODO: Description of OdellLessonCompiler.
-  spec.license     = 'MIT' # TODO: Update the license.
+  spec.license     = 'Apache-2.0' # TODO: Update the license.
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
