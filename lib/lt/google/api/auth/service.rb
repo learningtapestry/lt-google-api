@@ -47,10 +47,10 @@ module Lt
             @credentials ||= begin
               remove_expired_token
               authorizer.get_credentials(user_id, context.request)
-            rescue StandardError => e
-              Rails.logger.warn e.message
-              nil
             end
+          rescue StandardError => e
+            Rails.logger.warn e.message
+            nil
           end
 
           def user_id

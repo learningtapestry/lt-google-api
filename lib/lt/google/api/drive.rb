@@ -49,6 +49,7 @@ module Lt
           # delete old files not present on new version
           current_files.each do |file|
             next if new_files.detect { |f| f.name == file.name }
+
             service.delete_file(file.id)
           end
 

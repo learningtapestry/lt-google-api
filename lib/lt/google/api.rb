@@ -7,7 +7,6 @@ require 'lt/google/api/drive'
 module Lt
   module Google
     module Api
-      # Your code goes here...
     end
   end
 end

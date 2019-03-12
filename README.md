@@ -10,11 +10,15 @@ gem 'lt-google-api'
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install lt-google-api
+```sh
+$ gem install lt-google-api
+```
 
 ## Usage
 
@@ -31,8 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/lt-google-api.
+Bug reports and pull requests are welcome on GitHub at https://github.com/learningtapestry/lt-google-api.
 
 ## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [Apache License](https://github.com/learningtapestry/lcms-engine/blob/master/LICENSE).
