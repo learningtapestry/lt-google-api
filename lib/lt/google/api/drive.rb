@@ -73,7 +73,7 @@ module Lt
             mime_type: MIME_FOLDER,
             parents: [parent_id]
           )
-          service.create_file(metadata).id
+          service.create_file(metadata)&.id
         end
 
         def list_file_ids_in(folder_id, mime_type: MIME_FILE, with_subfolders: true)
@@ -81,10 +81,11 @@ module Lt
             page_token = nil
             loop do
               response = service.list_files(
-                q: "'#{folder_id}' in parents",
+                q: "'#{folder_id}' in parents  and trashed = false",
                 fields: 'files(id, mime_type), nextPageToken',
                 page_token: page_token
               )
+              break if response.nil?
 
               response.files.each do |f|
                 case f.mime_type
@@ -104,7 +105,7 @@ module Lt
           service.list_files(
             q: "'#{folder_id}' in parents and name = '#{name}' and mimeType = '#{MIME_FOLDER}' and trashed = false",
             fields: 'files(id)'
-          ).files
+          )&.files
         end
 
         private
@@ -113,7 +114,7 @@ module Lt
           service.list_files(
             q: "'#{folder_id}' in parents and mimeType = '#{MIME_FILE}' and trashed = false",
             fields: 'files(id, name)'
-          ).files
+          )&.files
         end
       end
     end
