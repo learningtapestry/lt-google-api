@@ -10,5 +10,4 @@
 # Ignore IDE specific files
 .idea/
 
-Gemfile.lock
 .DS_Store

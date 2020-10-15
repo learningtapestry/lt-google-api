@@ -15,6 +15,8 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.description = ''
   spec.license     = 'Apache-2.0'
 
+  spec.required_ruby_version = '>= 2.6'
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -35,8 +37,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency 'googleauth'
 
   spec.add_development_dependency 'bundler', '~> 1.16'
-  spec.add_development_dependency 'bundler-audit'
-  spec.add_development_dependency 'overcommit', '~> 0.49.1'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rubocop', '~> 0.59.2'
+  spec.add_development_dependency 'overcommit', '~> 0.57'
+  spec.add_development_dependency 'rake', '~> 13'
+  spec.add_development_dependency 'rubocop', '~> 0.93.1'
 end
