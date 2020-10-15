@@ -4,7 +4,7 @@ module Lt
   module Google
     module Api
       class Drive
-        FOLDER_RE = %r{/drive/(.*/)?folders/([^\/?]+)/?}
+        FOLDER_RE = %r{/drive/(.*/)?folders/([^/?]+)/?}.freeze
         MIME_FILE   = 'application/vnd.google-apps.document'
         MIME_FOLDER = 'application/vnd.google-apps.folder'
 
