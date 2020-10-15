@@ -31,11 +31,15 @@ module Lt
 
         def copy(file_ids, folder_id)
           file_ids.each do |id|
-            service.get_file(id, fields: 'name') do |f, err|
+            service.get_file(id, fields: 'name', supports_all_drives: true) do |f, err|
               if err.present?
                 Rails.logger.error "Failed to get file with #{id}, #{err.message}"
               else
-                service.copy_file(id, Google::Apis::DriveV3::File.new(name: f.name, parents: [folder_id]))
+                service.copy_file(
+                  id,
+                  Google::Apis::DriveV3::File.new(name: f.name, parents: [folder_id]),
+                  supports_all_drives: true
+                )
               end
             end
           end
@@ -50,7 +54,7 @@ module Lt
           current_files.each do |file|
             next if new_files.detect { |f| f.name == file.name }
 
-            service.delete_file(file.id)
+            service.delete_file(file.id, supports_all_drives: true)
           end
 
           new_files.each do |file|
@@ -59,7 +63,7 @@ module Lt
 
             # copy if it's a new file
             new_file = Google::Apis::DriveV3::File.new(name: file.name, parents: [target_id])
-            service.copy_file(file.id, new_file)
+            service.copy_file(file.id, new_file, supports_all_drives: true)
           end
         end
 
@@ -73,7 +77,7 @@ module Lt
             mime_type: MIME_FOLDER,
             parents: [parent_id]
           )
-          service.create_file(metadata)&.id
+          service.create_file(metadata, supports_all_drives: true)&.id
         end
 
         def list_file_ids_in(folder_id, mime_type: MIME_FILE, with_subfolders: true)
@@ -104,7 +108,8 @@ module Lt
         def fetch_folders(name, folder_id)
           service.list_files(
             q: "'#{folder_id}' in parents and name = '#{name}' and mimeType = '#{MIME_FOLDER}' and trashed = false",
-            fields: 'files(id)'
+            fields: 'files(id)',
+            supports_all_drives: true
           )&.files
         end
 
@@ -113,7 +118,8 @@ module Lt
         def list(folder_id)
           service.list_files(
             q: "'#{folder_id}' in parents and mimeType = '#{MIME_FILE}' and trashed = false",
-            fields: 'files(id, name)'
+            fields: 'files(id, name)',
+            supports_all_drives: true
           )&.files
         end
       end
