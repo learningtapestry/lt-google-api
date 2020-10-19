@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/learningtapestry/lt-google-api/compare/v0.2.0...HEAD)
 
+## [0.2.1](https://github.com/learningtapestry/lt-lcms/compare/v0.2.0...v0.2.1) - 2020-10-15
+
+### Fixed
+
+- Correctly fetches content of Google Shared Drives ([#8](https://github.com/learningtapestry/lt-google-api/pull/8))
+
 ## [0.2.0](https://github.com/learningtapestry/lt-lcms/compare/v0.1.1...v0.2.0) - 2020-10-15
 
 ### Added
