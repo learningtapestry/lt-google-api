@@ -37,7 +37,7 @@ module Lt
               else
                 service.copy_file(
                   id,
-                  Google::Apis::DriveV3::File.new(name: f.name, parents: [folder_id]),
+                  ::Google::Apis::DriveV3::File.new(name: f.name, parents: [folder_id]),
                   supports_all_drives: true
                 )
               end
@@ -62,7 +62,7 @@ module Lt
             next if current_files.detect { |f| f.name == file.name }
 
             # copy if it's a new file
-            new_file = Google::Apis::DriveV3::File.new(name: file.name, parents: [target_id])
+            new_file = ::Google::Apis::DriveV3::File.new(name: file.name, parents: [target_id])
             service.copy_file(file.id, new_file, supports_all_drives: true)
           end
         end
