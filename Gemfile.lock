@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    lt-google-api (0.2.1)
-      google-api-client
-      googleauth
+    lt-google-api (0.2.2)
+      google-api-client (~> 0.46)
+      googleauth (~> 0.14)
 
 GEM
   remote: https://rubygems.org/
