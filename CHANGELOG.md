@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/learningtapestry/lt-google-api/compare/v0.2.2...HEAD)
 
-## [0.2.1](https://github.com/learningtapestry/lt-lcms/compare/v0.2.1...v0.2.2) - 2020-12-25
+- Fix Google API query when object name contains special characters like _'_
+
+## [0.2.2](https://github.com/learningtapestry/lt-lcms/compare/v0.2.1...v0.2.2) - 2020-12-25
 
 ### Fixed
 

@@ -85,9 +85,9 @@ module Lt
             page_token = nil
             loop do
               response = service.list_files(
-                q: "'#{folder_id}' in parents  and trashed = false",
+                q: %("#{folder_id}" in parents  and trashed = false"),
                 fields: 'files(id, mime_type), nextPageToken',
-                page_token: page_token,
+                page_token: page_token.to_s,
                 include_items_from_all_drives: true,
                 supports_all_drives: true
               )
@@ -109,7 +109,7 @@ module Lt
 
         def fetch_folders(name, folder_id)
           service.list_files(
-            q: "'#{folder_id}' in parents and name = '#{name}' and mimeType = '#{MIME_FOLDER}' and trashed = false",
+            q: %("#{folder_id}" in parents and name = "#{name}" and mimeType = "#{MIME_FOLDER}" and trashed = false),
             fields: 'files(id)',
             include_items_from_all_drives: true,
             supports_all_drives: true
@@ -120,7 +120,7 @@ module Lt
 
         def list(folder_id)
           service.list_files(
-            q: "'#{folder_id}' in parents and mimeType = '#{MIME_FILE}' and trashed = false",
+            q: %("#{folder_id}" in parents and mimeType = "#{MIME_FILE}" and trashed = false),
             fields: 'files(id, name)',
             include_items_from_all_drives: true,
             supports_all_drives: true
