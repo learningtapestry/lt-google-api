@@ -85,7 +85,7 @@ module Lt
             page_token = nil
             loop do
               response = service.list_files(
-                q: %("#{folder_id}" in parents  and trashed = false"),
+                q: %("#{folder_id}" in parents and trashed = false),
                 fields: 'files(id, mime_type), nextPageToken',
                 page_token: page_token.to_s,
                 include_items_from_all_drives: true,
