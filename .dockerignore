@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# Ignore IDE specific files
+.idea/
+
+# Misc
+.DS_Store
+.gem_rbs_collection/
