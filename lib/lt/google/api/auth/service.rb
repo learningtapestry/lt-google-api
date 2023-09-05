@@ -64,7 +64,7 @@ module Lt
           end
 
           def remove_expired_token
-            data = JSON(redis.get(user_token)) rescue nil
+            data = ::JSON.parse(redis.get(user_token)) rescue nil
             return unless data
 
             expires_at = data['expiration_time_millis'].to_i / 1_000
