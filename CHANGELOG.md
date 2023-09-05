@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/learningtapestry/lt-google-api/compare/v0.2.4...HEAD)
 
+### Added
+
+- Added Docker support [@paranoicsan](https://github.com/paranoicsan)
+- Added RBS support [@paranoicsan](https://github.com/paranoicsan)
+
+### Changed
+
+- Updated dependencies [@paranoicsan](https://github.com/paranoicsan)
+- Ruby updated to 3.2.1 [@paranoicsan](https://github.com/paranoicsan)
+
 ## [0.2.4](https://github.com/learningtapestry/lt-lcms/compare/v0.2.3...v0.2.4) - 2021-07-16
 
 ### Fixed
