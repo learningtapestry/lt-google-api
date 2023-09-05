@@ -4,7 +4,7 @@ module Lt
   module Google
     module Api
       class Drive
-        FOLDER_RE = %r{/drive/(.*/)?folders/([^/?]+)/?}.freeze
+        FOLDER_RE = %r{/drive/(.*/)?folders/([^/?]+)/?}
         MIME_FILE   = 'application/vnd.google-apps.document'
         MIME_FOLDER = 'application/vnd.google-apps.folder'
 
@@ -73,7 +73,7 @@ module Lt
           end
 
           metadata = ::Google::Apis::DriveV3::File.new(
-            name: name,
+            name:,
             mime_type: MIME_FOLDER,
             parents: [parent_id]
           )

@@ -28,7 +28,7 @@ Metrics/BlockLength:
   Exclude:
   - '**/*_spec.rb'
   - 'config/routes.rb'
-  ExcludedMethods: ['guard', 'included']
+  AllowedMethods: ['guard', 'included']
 
 Metrics/ClassLength:
   Max: 250

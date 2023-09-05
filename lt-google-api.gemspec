@@ -23,7 +23,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
     spec.metadata['allowed_push_host'] = 'https://rubygems.org'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
+          'public gem pushes.'
   end
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
@@ -41,4 +41,5 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_development_dependency 'rake', '~> 13'
   spec.add_development_dependency 'rubocop', '~> 1'
   spec.add_development_dependency 'steep', '~> 1.5.3'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 end
