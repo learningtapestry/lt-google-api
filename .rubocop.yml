@@ -13,7 +13,7 @@ AllCops:
     - db/schema.rb
     - node_modules/**/*
   NewCops: enable
-  TargetRubyVersion: 3.2
+  TargetRubyVersion: 2.7
 
 Gemspec/DevelopmentDependencies:
   EnforcedStyle: gemspec
@@ -39,7 +39,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Max: 9
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
 
 Metrics/MethodLength:
