@@ -15,7 +15,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.description = ''
   spec.license     = 'Apache-2.0'
 
-  spec.required_ruby_version = '>= 3.2'
+  spec.required_ruby_version = '>= 2.7'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
@@ -33,8 +33,8 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'google-api-client', '~> 0.46'
-  spec.add_dependency 'googleauth', '~> 0.14'
+  spec.add_dependency 'google-apis-drive_v3', '~> 0.46'
+  spec.add_dependency 'googleauth', '~> 1.9'
 
   spec.add_development_dependency 'bundler', '~> 2.4'
   spec.add_development_dependency 'overcommit', '~> 0.57'

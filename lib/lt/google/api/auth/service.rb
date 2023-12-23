@@ -18,7 +18,7 @@ module Lt
                 client_id =
                   ::Google::Auth::ClientId.new(ENV.fetch('GOOGLE_OAUTH2_CLIENT_ID', nil),
                                                ENV.fetch('GOOGLE_OAUTH2_CLIENT_SECRET', nil))
-                token_store ||= ::Google::Auth::Stores::RedisTokenStore.new(redis:)
+                token_store ||= ::Google::Auth::Stores::RedisTokenStore.new(redis: redis)
                 scope = %w(https://www.googleapis.com/auth/drive)
                 ::Google::Auth::WebUserAuthorizer.new(client_id, scope, token_store, callback_path)
               end
