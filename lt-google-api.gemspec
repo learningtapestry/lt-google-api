@@ -15,7 +15,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.description = ''
   spec.license     = 'Apache-2.0'
 
-  spec.required_ruby_version = '>= 2.7'
+  spec.required_ruby_version = '>= 3.2'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.

@@ -13,7 +13,7 @@ AllCops:
     - db/schema.rb
     - node_modules/**/*
   NewCops: enable
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 3.2
 
 Gemspec/DevelopmentDependencies:
   EnforcedStyle: gemspec
