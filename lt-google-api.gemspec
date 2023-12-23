@@ -7,8 +7,8 @@ require 'lt/google/api/version'
 Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.name          = 'lt-google-api'
   spec.version       = Lt::Google::Api::VERSION
-  spec.authors       = ['Alexander Kuznetsov']
-  spec.email         = %w(alexander@learningtapeestry.com paranoic.san@gmail.com)
+  spec.authors       = ['Alexander Kuznetsov', 'Oksana Melnikova']
+  spec.email         = %w(paranoic.san@gmail.com oksana.melnikova@gmail.com)
 
   spec.homepage    = 'https://github.com/learningtapestry/lt-google-api'
   spec.summary     = 'Provides the set of classes to simplify work with Google services'
