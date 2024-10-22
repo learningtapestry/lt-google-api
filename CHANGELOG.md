@@ -6,13 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/learningtapestry/lt-google-api/compare/v0.3.2...HEAD)
 
-## [0.3.0](https://github.com/learningtapestry/lt-lcms/compare/v0.3.0...v0.3.2) - 2023-12-23
+## [0.3.2](https://github.com/learningtapestry/lt-google-api/compare/v0.3.0...v0.3.2) - 2023-12-23
 
 ### Changed
 
 - Bumped versions for 'google-apis-drive_v3' to '~> 0.63.0' and 'googleauth', '~> 1.11.2'
 
-## [0.3.0](https://github.com/learningtapestry/lt-lcms/compare/v0.2.4...v0.3.0) - 2023-12-23
+## [0.3.1](https://github.com/learningtapestry/lt-google-api/compare/v0.3.0...v0.3.1) - 2024-10-22
+### Changed
+- Updated dependencies [@shlag3n](https://github.com/shlag3n)
+- Upgraded google-api to 0.15 [@shlag3n](https://github.com/shlag3n)
+
+## [0.3.0](https://github.com/learningtapestry/lt-google-api/compare/v0.2.4...v0.3.0) - 2023-12-23
 ### Added
 
 - Added Docker support [@paranoicsan](https://github.com/paranoicsan)
@@ -25,25 +30,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ruby updated to 2.7.7 [@shlag3n](https://github.com/shlag3n) at the main branch
 - Upgraded google-api to 0.11 [@shlag3n](https://github.com/shlag3n)
 
-## [0.2.4](https://github.com/learningtapestry/lt-lcms/compare/v0.2.3...v0.2.4) - 2021-07-16
+## [0.2.4](https://github.com/learningtapestry/lt-google-api/compare/v0.2.3...v0.2.4) - 2021-07-16
 
 ### Fixed
 
 - Fix for Google Query ([#13](https://github.com/learningtapestry/lt-google-api/pull/13))
 
-## [0.2.3](https://github.com/learningtapestry/lt-lcms/compare/v0.2.2...v0.2.3) - 2021-07-02
+## [0.2.3](https://github.com/learningtapestry/lt-google-api/compare/v0.2.2...v0.2.3) - 2021-07-02
 
 ### Fixed
 
 - Fix Google API query when object name contains special characters like " ' " ([#11](https://github.com/learningtapestry/lt-google-api/pull/11))
 
-## [0.2.2](https://github.com/learningtapestry/lt-lcms/compare/v0.2.1...v0.2.2) - 2020-12-25
+## [0.2.2](https://github.com/learningtapestry/lt-google-api/compare/v0.2.1...v0.2.2) - 2020-12-25
 
 ### Fixed
 
 - Fix Google API namespace ([#9](https://github.com/learningtapestry/lt-google-api/pull/9))
 
-## [0.2.1](https://github.com/learningtapestry/lt-lcms/compare/v0.2.0...v0.2.1) - 2020-10-15
+## [0.2.1](https://github.com/learningtapestry/lt-google-api/compare/v0.2.0...v0.2.1) - 2020-10-15
 
 ### Fixed
 
@@ -55,7 +60,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add support for Google Shared Drives ([#7](https://github.com/learningtapestry/lt-google-api/pull/7))
 
-## [0.1.1](https://github.com/learningtapestry/lt-lcms/compare/v0.1.0...v0.1.1) - 2020-01-13
+## [0.1.1](https://github.com/learningtapestry/lt-google-api/compare/v0.1.0...v0.1.1) - 2020-01-13
 
 ### Added
 
