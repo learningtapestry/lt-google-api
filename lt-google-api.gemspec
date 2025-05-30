@@ -33,8 +33,8 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'google-apis-drive_v3', '~> 0.46'
-  spec.add_dependency 'googleauth', '~> 1.9'
+  spec.add_dependency 'google-apis-drive_v3', '~> 0.66'
+  spec.add_dependency 'googleauth', '~> 1.14'
 
   spec.add_development_dependency 'bundler', '~> 2.4'
   spec.add_development_dependency 'overcommit', '~> 0.57'
