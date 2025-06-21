@@ -99,7 +99,7 @@ module Lt
                 case f.mime_type
                 when mime_type then result << f.id
                 when MIME_FOLDER
-                  result.concat(list_file_ids_in f.id, mime_type: mime_type) if with_subfolders
+                  result.concat(list_file_ids_in(f.id, mime_type: mime_type)) if with_subfolders
                 end
               end
 

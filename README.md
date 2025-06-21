@@ -33,7 +33,7 @@ $ gem install lt-google-api
 ## Development
 
 ```shell
-docker buildx build --platform linux/arm64/v8,linux/amd64 -t learningtapestry/lt-google-api --push .
+docker buildx build --platform linux/arm64/v8,linux/amd64 -t learningtapestry/lt-google-api:legacy --push .
 ```
 
 ### Type checking
