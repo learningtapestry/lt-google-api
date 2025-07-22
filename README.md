@@ -5,6 +5,8 @@
 
 ## Installation
 
+_Note:_ This is the Ruby 3.x branch. For Ruby 2.x, the latest version is `0.3.2`. If any updates are needed for the Ruby 2.x version, use the [`ruby-2x`](https://github.com/learningtapestry/lt-google-api/tree/ruby-2x) branch.
+
 Add this line to your application's Gemfile:
 
 ```ruby
