@@ -52,7 +52,7 @@ module Lt
           new_files = list folder_id
           current_files = list target_id
 
-          # delete old files not present on new version
+          # delete old files not present on a new version
           current_files.each do |file|
             next if new_files.detect { |f| f.name == file.name }
 
@@ -83,30 +83,33 @@ module Lt
         end
 
         def list_file_ids_in(folder_id, mime_type: MIME_FILE, with_subfolders: true)
-          [].tap do |result|
-            page_token = nil
-            loop do
-              response = service.list_files(
-                q: %("#{folder_id}" in parents and trashed = false),
-                fields: 'files(id, mime_type), nextPageToken',
-                page_token: page_token.to_s,
-                include_items_from_all_drives: true,
-                supports_all_drives: true
-              )
-              break if response.nil?
+          # @type var result: Array[String]
+          result = []
+          page_token = nil
+          loop do
+            response = service.list_files(
+              q: %("#{folder_id}" in parents and trashed = false),
+              fields: 'files(id, mime_type), nextPageToken',
+              page_token: page_token.to_s,
+              include_items_from_all_drives: true,
+              supports_all_drives: true
+            )
+            break if response.nil?
 
-              response.files.each do |f|
-                case f.mime_type
-                when mime_type then result << f.id
-                when MIME_FOLDER
-                  result.concat(list_file_ids_in(f.id, mime_type: mime_type)) if with_subfolders
-                end
+            response.files.each do |f|
+              case f.mime_type
+              when mime_type then result << f.id
+              when MIME_FOLDER
+                result.concat(list_file_ids_in(f.id, mime_type: mime_type)) if with_subfolders
+              else
+                puts "Unknown mime type: #{f.mime_type} (File ID: #{f.id})"
               end
-
-              page_token = response.next_page_token
-              break if page_token.nil?
             end
-          end.flatten
+
+            page_token = response.next_page_token
+            break if page_token.nil?
+          end
+          result.flatten
         end
 
         def fetch_folders(name, folder_id)

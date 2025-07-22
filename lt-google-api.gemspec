@@ -17,7 +17,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
 
   spec.required_ruby_version = '>= 3.2'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # Prevent pushing this gem to RubyGems.org. To allow pushes, either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = 'https://rubygems.org'
@@ -36,10 +36,10 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency 'google-apis-drive_v3', ' ~> 0.66'
   spec.add_dependency 'googleauth', '~> 1.14'
 
-  spec.add_development_dependency 'bundler', '~> 2.4'
+  spec.add_development_dependency 'bundler', '~> 2.5'
   spec.add_development_dependency 'overcommit', '~> 0.57'
   spec.add_development_dependency 'rake', '~> 13'
   spec.add_development_dependency 'rubocop', '~> 1'
-  spec.add_development_dependency 'steep', '~> 1.5.3'
+  spec.add_development_dependency 'steep', '~> 1.10'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
