@@ -1,8 +1,10 @@
-version: '3.8'
-
 services:
   app:
-    image: learningtapestry/lt-google-api:legacy
+    image: learningtapestry/lt-google-api
     command: bash -c "bundle install && tail -f /dev/null"
     volumes:
       - .:/app
+      - bundle-3.2.1:/usr/local/bundle
+
+volumes:
+  bundle-3.2.1:

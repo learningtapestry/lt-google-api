@@ -36,10 +36,13 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency 'google-apis-drive_v3', ' ~> 0.66'
   spec.add_dependency 'googleauth', '~> 1.14'
 
+  # NOTE: Limited to 7.x due to all clients are using 7.x
+  spec.add_dependency 'activesupport', '~> 7'
+
   spec.add_development_dependency 'bundler', '~> 2.4'
   spec.add_development_dependency 'overcommit', '~> 0.57'
   spec.add_development_dependency 'rake', '~> 13'
   spec.add_development_dependency 'rubocop', '~> 1'
-  spec.add_development_dependency 'steep', '~> 1.5.3'
+  spec.add_development_dependency 'steep', '~> 1.10'
   spec.metadata['rubygems_mfa_required'] = 'true'
 end
