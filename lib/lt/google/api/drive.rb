@@ -52,7 +52,7 @@ module Lt
           new_files = list folder_id
           current_files = list target_id
 
-          # delete old files not present on new version
+          # delete old files not present on a new version
           current_files.each do |file|
             next if new_files.detect { |f| f.name == file.name }
 
@@ -83,7 +83,7 @@ module Lt
         end
 
         def list_file_ids_in(folder_id, mime_type: MIME_FILE, with_subfolders: true)
-          [].tap do |result|
+          [].tap do |result| # steep:ignore UnannotatedEmptyCollection
             page_token = nil
             loop do
               response = service.list_files(

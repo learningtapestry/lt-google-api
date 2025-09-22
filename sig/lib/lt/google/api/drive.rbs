@@ -18,7 +18,7 @@ module Lt
         def copy: (untyped file_ids, untyped folder_id) -> untyped
         def copy_files: (untyped folder_id, untyped target_id) -> untyped
         def create_folder: (untyped name, ?untyped? parent_id) -> untyped
-        def list_file_ids_in: (untyped folder_id, ?mime_type: untyped, ?with_subfolders: bool) -> untyped
+        def list_file_ids_in: (untyped folder_id, ?mime_type: untyped, ?with_subfolders: bool) -> Array[String]
         def fetch_folders: (untyped name, untyped folder_id) -> untyped
 
         private
