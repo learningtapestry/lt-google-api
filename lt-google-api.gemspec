@@ -37,7 +37,7 @@ Gem::Specification.new do |spec| # rubocop:disable Metrics/BlockLength
   spec.add_dependency 'googleauth', '~> 1.14'
 
   # NOTE: Limited to 7.x due to all clients are using 7.x
-  spec.add_dependency 'activesupport', '~> 7'
+  spec.add_dependency 'activesupport', '>= 7', '< 9'
 
   spec.add_development_dependency 'bundler', '~> 2.4'
   spec.add_development_dependency 'overcommit', '~> 0.57'
